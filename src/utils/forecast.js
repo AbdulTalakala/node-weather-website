@@ -7,7 +7,7 @@ const forecast = (latitude,longitude,callback) =>{
     axios.get(url)
         .then(({data}) => {
             console.log(url)
-                callback(undefined,"Its currenly " +  data.current.temp_c + " celeicuis outside in " + data.location.name)
+                callback(undefined,"Its currenly " +  data.current.temp_c + " celeicuis outside in " + data.location.name + " last updated at" + data.current.last_updated)
         })
         .catch(({response}) =>{
             if(!error.response){
